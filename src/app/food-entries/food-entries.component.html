@@ -1,0 +1,24 @@
+<div class="food-entries">
+  <h2 class="text-center">Votre Journée</h2>
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-4" *ngFor="let entry of foodEntries">
+      <div class="card mb-3">
+        <div class="card-body">
+          <div class="d-flex justify-content-end">
+            <img *ngIf="entry.type === 'petit déjeuner'" src="../../assets/p-dej.png" alt="Logo Dejeuner" class="icon">
+            <img *ngIf="entry.type === 'déjeuner'" src="../../assets/dej.png" alt="Logo Dejeuner" class="icon">
+            <img *ngIf="entry.type === 'dîner'" src="../../assets/dej.png" alt="Logo Dinner" class="icon">
+            <img *ngIf="entry.type === 'goûter'" src="../../assets/gouter.png" alt="Logo Collation" class="icon">
+          </div>
+          <h5 class="card-title">{{ entry.nom }}</h5>
+          <p class="card-text"><strong>Description:</strong> {{ entry.description }}</p>
+          <p class="card-text"><strong>Calories:</strong> {{ entry.calories }}</p>
+          <p class="card-text"><strong>Type:</strong> {{ entry.type }}</p>
+          <div class="btn-group">
+            <button class="btn btn-danger" (click)="deleteEntry(entry._id)">Supprimer</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

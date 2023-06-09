@@ -1,0 +1,13 @@
+.profil{
+
+    display: flex;
+    align-items: center;
+    margin-right: 10%;
+}
+li:hover{
+    color: grey;
+}
+li{
+    color: white;
+    cursor: pointer;
+}

@@ -1,0 +1,38 @@
+<app-navbar></app-navbar>
+<app-daily-calories></app-daily-calories>
+<app-food-entries></app-food-entries>
+
+<div class="container mt-5">
+  <h2 class="text-center">Ajouter un aliment</h2>
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <form [formGroup]="formulaire" (ngSubmit)="saveFoodEntry()">
+        <div class="form-group">
+          <label for="foodName">Nom de l'aliment</label>
+          <input type="text" formControlName="nom" class="form-control" id="foodName" placeholder="Entrez le nom de l'aliment">
+        </div>
+        <div class="form-group">
+          <label for="foodDescription">Description</label>
+          <textarea class="form-control" formControlName="description" id="foodDescription" rows="3" placeholder="Entrez une description de l'aliment"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="calories">Calories</label>
+          <input type="number" formControlName="calories" class="form-control" id="calories" placeholder="Entrez le nombre de calories">
+        </div>
+        <div class="form-group">
+          <label for="mealType">Type de repas</label>
+          <select class="form-control" formControlName="type" id="mealType">
+            <option value="petit déjeuner">Petit-déjeuner</option>
+            <option value="déjeuner">Déjeuner</option>
+            <option value="goûter">Goûter</option>
+            <option value="dîner">Dîner</option>
+          </select>
+        </div>
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary" style="width: 200px;margin: 10px;">Ajouter</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+

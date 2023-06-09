@@ -1,0 +1,23 @@
+<app-navbar></app-navbar>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-3">
+      <h1 class="text-center">Food Tracker</h1>
+      <p class="text-center">Connectez-vous pour commencer à suivre vos repas et vos calories :</p>
+      <form [formGroup]="formulaire" (ngSubmit)="login()">
+        <div class="form-group">
+          <label for="pseudo">Pseudo</label>
+          <input type="text" formControlName="pseudo" class="form-control" id="pseudo" placeholder="Entrez votre pseudo">
+        </div>
+        <div class="form-group">
+          <label for="password">Mot de passe</label>
+          <input type="password" formControlName="password" class="form-control" id="password" placeholder="Entrez votre mot de passe">
+        </div>
+        <div class="form-group text-center mt-3">
+          <button type="submit" class="btn btn-primary btn-block" style="width: 100%;">Se connecter</button>
+          <small>Pas de compte? <span class="goRegister" (click)="goRegister()">inscrivez vous!</span></small>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
